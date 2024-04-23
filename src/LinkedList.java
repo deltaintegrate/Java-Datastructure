@@ -108,4 +108,39 @@ public class LinkedList extends Node {
             temp = after;
         }
     }
+
+    public Node findMiddleNode (){
+        Node slowPointer = head;
+        Node fastPointer = head;
+
+        while(fastPointer != null && fastPointer.next != null){
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+
+            if(fastPointer == slowPointer){
+                return true;
+            }
+        }
+        return slowPointer;
+    }
+
+    public Node findKthFromEnd(int k){
+        Node slow = head;
+        Node fast = head;
+
+        for( int i = 0; i < k; i++){
+            if(fast == null){
+                return null;
+            }
+            fast = fast.next;
+        }
+
+        while(fast != null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+
+
+    }
 }
