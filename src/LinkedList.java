@@ -118,7 +118,7 @@ public class LinkedList extends Node {
             fastPointer = fastPointer.next.next;
 
             if(fastPointer == slowPointer){
-                return true;
+                //return true;
             }
         }
         return slowPointer;
